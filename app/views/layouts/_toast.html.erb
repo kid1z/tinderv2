@@ -1,0 +1,9 @@
+<% flash.each do |key, value| %>
+  <div class="toast">
+      <div class="toast__content">
+      <div class="before before--<%= key %>"></div>
+      <div class="check check--<%= key %>">X</div>
+      <div class="text"><p><%= key %></p><p class="message"> <%= value %> </p></div>
+      </div>
+  </div>
+<% end %>

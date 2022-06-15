@@ -1,0 +1,57 @@
+@import 'variables';
+aside {
+    width: 350px;
+    max-width: 400px;
+    background-color: #F5F7FA;
+    height: 100%;
+    border-right: 1px solid hsla(0, 0%, 76%, 0.478) !important;
+    .navbar {
+        height: 60px;
+        background: linear-gradient( 262deg, #ff7854, #fd267d);
+        box-shadow: 0px 0 6px #ded4d4;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .avatar {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 2px solid $white;
+            background: url("https://images-ssl.gotinder.com/5dee44ec415e0d0100c30441/172x216_a01f4b77-d66c-49e9-841c-f7cf8d1f499e.jpg");
+            background-position: center center;
+            background-size: cover;
+            img {
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+        h1 {
+            color: $white;
+            font-size: 22px;
+            font-weight: 200;
+        }
+    }
+    .setting {
+        a {
+            padding: 13px 0;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #afafaf;
+            border-bottom: 1px solid #afafaf;
+            margin: 15px 0;
+            color: #4e4b4b;
+            font-weight: 100;
+            transition: .2s color ease;
+            &:hover {
+                color: #e63a3a;
+            }
+        }
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            color: #4e4b4b;
+        }
+
+    }
+}

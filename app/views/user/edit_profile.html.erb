@@ -1,0 +1,60 @@
+<% if flash.now[:success] %>
+  <%= render "layouts/toast" %>
+<% end %>
+<div class="password-change">
+    <%= render "layouts/sidebar" %>
+    <div class="content">
+        <div class="heading"> 
+            <div class="heading-avt">
+                <div class="heading-circle">
+                    <% if @user.avatar.attached? %>
+                        <%= image_tag @user.avatar  %>
+                    <% end %>
+                </div>
+            </div>
+            <div> 
+                <h1><%= @user.name %></h1>
+                <label for="user_avatar">Update Avatar</label>
+            </div>
+        </div>
+        <%= form_with model: @user, url: edit_path, method: :put do |f| %>
+            <div> 
+                <label></label>
+                <%= f.file_field :avatar %>
+            </div>
+            <div> 
+                <%= f.label :name, "Name" %>
+                <%= f.text_field :name %>
+            </div>
+            <div> 
+                <%= f.label :age, "Age" %>
+                <%= f.number_field :age %>
+            </div>
+            <div> 
+                <%= f.label :username, "Username" %>
+                <%= f.text_field :username %>
+            </div>
+            <div> 
+                <%= f.label :email, "Email" %>
+                <%= f.email_field :email %>
+            </div>
+            <div> 
+                <%= f.label :phonenumber, "Phone Number" %>
+                <%= f.number_field :phonenumber %>
+            </div>
+            <div> 
+                <%= f.label :gender, "Gender" %>
+                <%= f.select :gender, User.genders.keys %>
+            </div>
+            <div> 
+                <%= f.label :address, "Address" %>
+                <%= f.select :address, User.addresses.keys %>
+            </div>
+            <div> 
+                <label></label>
+                <%= f.submit "Update"%>
+            </div>
+
+        <% end %>
+    </div>
+</div>

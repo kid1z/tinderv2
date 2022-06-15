@@ -1,0 +1,129 @@
+@import 'variables';
+main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/bg.webp);
+    background-position-x: center;
+    background-repeat: repeat-y;
+    animation: marquee 30s linear infinite;
+    @keyframes marquee {
+        0% {
+            background-position-y: 0;
+        }
+        50% {
+            background-position-y: -270px;
+        }
+        100% {
+            background-position-y: 0;
+        }
+    }
+    &::before {
+        content: "";
+        background-color: rgba(0,0,0,.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        // z-index: ;
+    }
+    &::after {
+        content: "";
+        background: linear-gradient(180deg,#000 0,transparent 150px);
+        position: absolute;
+        top:0;
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        .main__logo {
+            display: flex;
+            align-items: center;
+            h1 {
+                font-size: 40px;
+                color: $white;
+                font-weight: 900;
+            }
+            &--svg {
+                display: block;
+                width: 65px;
+                height: 65px;
+                svg#sprite-hamham {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .main__login {
+            display: flex;
+            align-items: center;
+            h2 {
+                font-size: 17px;
+                color: $white;
+                font-weight: 200;
+                text-transform: uppercase;
+                margin-right: 30px;
+            }
+            a {
+                padding: 11px 25px;
+                font-size: 17px;
+                color: red;
+                background: $white;
+                text-transform: uppercase;
+                border-radius: 6px;
+                font-weight: 400;
+                transition: .2s all ease;
+                &:hover {
+                    background: $bg-gradient;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    
+    section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 999;
+        h1 {
+            font-size: 7vw;
+            font-weight: 900;
+            color: $white;
+        }
+        a {
+            text-transform: uppercase;
+            color: $white;
+            font-size: 1.1rem;
+            font-weight: 200;
+            display: block;
+            max-width: max-content;
+            padding: 20px 47px;
+            background: linear-gradient(262deg,#ff7854,#fd267d);
+            border-radius: 999px;
+            margin: 3rem auto 0 auto;
+            transition: .4s all ease;
+            background-size: 100% 100%;
+            background-position-x: 0;
+            &:hover {
+                background-size: 500% 500%;
+                background: linear-gradient(262deg,#ff7854,#fd267d);
+                background-position-x: 15.3rem;
+
+            }
+        }
+    }
+}

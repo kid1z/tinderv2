@@ -1,0 +1,32 @@
+<div class="filter">
+    <%= render "layouts/sidebar" %>
+    <div class="content">
+        <h1>Tick the checkbox to enable input fields</h1>
+        <%= form_with method: :post, url: filter_path do |f| %>
+            <div> 
+                <%= f.label :age, "Age" %>
+                <%= f.number_field :age, disabled: true %>
+                <%= f.check_box :checkbox, id: :age %>
+            </div>
+            
+            <div> 
+                <%= f.label :gender, "Gender" %>
+                <%= f.select :gender,User.genders.keys, { include_blank: true, disabled: " " }, disabled: true %>
+                <%= f.check_box :checkbox, id: :gender %>
+            </div>
+            
+            <div> 
+                <%= f.label :address, "Address" %>
+                <%= f.select :address, User.addresses.keys, { include_blank: true, } , disabled: true %>
+                <%= f.check_box :checkbox, id: :address %>
+            </div>
+
+            <div> 
+                <label></label>
+                <%= f.submit "Submit"%>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'main'%>

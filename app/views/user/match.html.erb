@@ -1,0 +1,27 @@
+<div class="match">
+    <%= render "layouts/sidebar" %>
+    <div class="content">
+      <h2>All person you liked together</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+        <% @new_match.each do |user| %>
+          <tr>
+            <td> <%= user.name%>  </td>
+            <td> <%= user.age%> </td>
+            <td> <%= user.address%> </td>
+            <td> 
+              <%= link_to "Message", chat_room_path(user.id) %>
+            </td>
+          </tr>
+        <% end %>
+        
+        
+        
+      </table>
+    </div>
+</div>

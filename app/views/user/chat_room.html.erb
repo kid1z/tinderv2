@@ -1,0 +1,33 @@
+<div class="message">
+  <%= render "layouts/sidebar" %>
+  <div class="content">
+    <div class="heading">
+      <div class="thumbnail">
+        <%= image_tag("thumbnail.jpeg") %>
+      </div>
+      <div class="info">
+        <h1> <%= @partner.name %> - id: <%= @partner.id%> </h1>
+        <div>
+          <p>Email: <%= @partner.email %> </p>
+          <p>Age: <%= @partner.age %> </p>
+          <p>Address: <%= @partner.address %> </p>
+        </div>
+      </div>
+    </div>
+    <div class="text-content">
+    <%# <p>
+      <script type="text/javascript">
+          alert("ss")
+      </script>
+    </p> %>
+      
+      
+    </div>
+    <%= form_with html: { autocomplete: "off" } do |f| %>
+      <%= f.hidden_field :room, value: @room_id %>
+      <%= f.hidden_field :user_id, value: @partner.id %>
+      <%= f.text_field :text, value: raw(@text) %>
+      <%= f.submit "Send", data: { disable_with: false } %>
+    <% end %>
+  </div>
+</div>
